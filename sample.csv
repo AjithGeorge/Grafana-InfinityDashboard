@@ -1,0 +1,8 @@
+name,mediaType,size
+browser_marketshare.csv,application/octet-stream,355 B
+flight_info_by_state.csv,application/octet-stream,681 B
+gdp_per_capita.csv,application/octet-stream,4.02 KiB
+js_libraries.csv,application/octet-stream,179 B
+ohlc_dogecoin.csv,application/octet-stream,187 KiB
+population_by_state.csv,application/octet-stream,138 B
+weight_height.csv,application/octet-stream,408 KiB
