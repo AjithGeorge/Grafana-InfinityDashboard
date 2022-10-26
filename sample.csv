@@ -1,8 +1,19 @@
-name,mediaType,size
-browser_marketshare.csv,application/octet-stream,355 B
-flight_info_by_state.csv,application/octet-stream,681 B
-gdp_per_capita.csv,application/octet-stream,4.02 KiB
-js_libraries.csv,application/octet-stream,179 B
-ohlc_dogecoin.csv,application/octet-stream,187 KiB
-population_by_state.csv,application/octet-stream,138 B
-weight_height.csv,application/octet-stream,408 KiB
+iteration,collectionName,requestName,method,url,status,code,responseTime,responseSize,executed
+1,API Tests,Generate_SessionId,POST,https://domain-env.com/auth/api/v1/sessions,Created,201,1142,69,"Test: Generate_SessionId-Check 201 Created, Test: Generate_SessionId-Update Session"
+1,API Tests,Generate_Token,POST,https://domain-env.com/auth/api/v1/tokens,OK,200,526,715,"Test: Generate_Token-Check 200 OK, Test: Generate_Token-Update Token"
+1,API Tests,Get_AuthVersion,GET,https://domain-env.com/auth/api/v1/documentation/api,OK,200,1107,141085,"Test: Get_AuthVersion-Check 200 OK, Test: Get_AuthVersion-Update Version"
+1,API Tests,Get_RestVersion,GET,https://domain-env.com/rest/api/documentation/api,OK,200,347,369688,"Test: Get_RestVersion-Check 200 OK, Test: Get_RestVersion-Update Version"
+1,API Tests,FDS_GetlfHoldings,GET,https://domain-env.com/rest/api/FDS/lf/holdings,OK,200,273,3902,"Test: FDS_GetlfHoldings: -200-OK, Test: FDS_GetlfHoldings: Request parameters check, Test: FDS_GetlfHoldings: Check successful data retrieval"
+1,API Tests,FDS_lfHoldingsRequiredParamsCheck,GET,https://domain-env.com/rest/api/FDS/lf/holdings?,Bad Request,400,272,36,Test: FDS_lfHoldingsRequiredParamsCheck -400-Bad Request
+1,API Tests,FDS_GetlfHoldingsInvalidLipperIdCheck,GET,https://domain-env.com/rest/api/FDS/lf/holdings,OK,200,718,313,"Test: FDS_GetlfHoldingsInvalidLipperIdCheck -200-OK, Test: FDS_GetlfHoldingsInvalidLipperIdCheck -Response to NOT have any data"
+1,API Tests,FDS_GetlfData,POST,https://domain-env.com/rest/api/FDS/lf_v2,OK,200,4393,9689,"Test: FDS_GetlfData: -200-OK, Test: FDS_GetlfData: Request parameters and default values check, Test: FDS_GetlfData: Check successful data retrieval"
+1,API Tests,FDS_lfDataSortingCheck,POST,https://domain-env.com/rest/api/FDS/lf_v2,OK,200,2981,8118,"Test: FDS_lfDataSortingCheck: -200-OK, Test: FDS_lfDataSortingCheck: Request parameters check, Test: FDS_lfDataSortingCheck: Check sort functionality, Test: FDS_lfDataSortingCheck: Check successful data retrieval"
+1,API Tests,FDS_lfDataPaginationCheck,POST,https://domain-env.com/rest/api/FDS/lf_v2,OK,200,3612,13566,"Test: FDS_lfDataPaginationCheck: -200-OK, Test: FDS_lfDataPaginationCheck: Request parameters check, Test: FDS_lfDataPaginationCheck: Check successful data retrieval"
+1,API Tests,FDS_lfData_WithLipperIdFilter,POST,https://domain-env.com/rest/api/FDS/lf_v2,OK,200,329,4425,"Test: FDS_lfData_WithLipperIdFilter: -200-OK, Test: FDS_lfData_WithLipperIdFilter: Request parameter check, Test: FDS_lfData_WithLipperIdFilter: Check response filtered based on lipperId, Test: FDS_lfData_WithLipperIdFilter: Check successful data retrieval"
+1,API Tests,FDS_lfData_WithCurrencyFilter,POST,https://domain-env.com/rest/api/FDS/lf_v2,OK,200,3339,9278,"Test: FDS_lfData_WithCurrencyFilter: -200-OK, Test: FDS_lfData_WithCurrencyFilter: Request parameter check, Test: FDS_lfData_WithCurrencyFilter: Check response filtered based on currency, Test: FDS_lfData_WithCurrencyFilter: Check successful data retrieval"
+1,API Tests,FDS_lfData_WithCountryFilter,POST,https://domain-env.com/rest/api/FDS/lf_v2,OK,200,2771,9765,"Test: FDS_lfData_WithCountryFilter: -200-OK, Test: FDS_lfData_WithCountryFilter: Request parameter check, Test: FDS_lfData_WithCountryFilter: Check response filtered based on currency, Test: FDS_lfData_WithCountryFilter: Check successful data retrieval"
+1,API Tests,FDS_lfData_WithlfFilter,POST,https://domain-env.com/rest/api/FDS/lf_v2,OK,200,451,10732,"Test: FDS_lfData_WithlfFilter: -200-OK, Test: FDS_lfData_WithlfFilter: Check lf filter action, Test: FDS_lfData_WithlfFilter: Check successful data retrieval"
+1,API Tests,FDS_lfData_WithClassSchemeIdFilter,POST,https://domain-env.com/rest/api/FDS/lf_v2,OK,200,3272,7690,"Test: FDS_lfData_WithClassSchemeIdFilter: -200-OK, Test: FDS_lfData_WithClassSchemeIdFilter: Request parameter check, Test: FDS_lfData_WithClassSchemeIdFilter: Check response filtered based on currency, Test: FDS_lfData_WithClassSchemeIdFilter: Check successful data retrieval"
+1,API Tests,FDS_lfData_ChecklfNamespaceComponents,POST,https://domain-env.com/rest/api/FDS/lf_v2,OK,200,2981,7474,"Test: FDS_lfData_ChecklfNamespaceComponents: -200-OK, Test: FDS_lfData_ChecklfNamespaceComponents: Check lf namespace components, Test: FDS_lfData_ChecklfNamespaceComponents: Check successful data retrieval"
+1,API Tests,FDS_lfDataOptionalParamsCheck,POST,https://domain-env.com/rest/api/FDS/lf_v2,OK,200,524,696,Test: FDS_lfDataOptionalParamsCheck -200-OK for missing optional params
+1,API Tests,FDS_lfDataRequiredParamsCheck,POST,https://domain-env.com/rest/api/FDS/lf_v2,Bad Request,400,546,36,Test: FDS_lfDataRequiredParamsCheck -400-Bad Request for missing required params
