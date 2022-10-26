@@ -5,3 +5,6 @@ Visualize data from JSON, CSV, XML, GraphQL, HTML & REST APIs. Also turns any we
 
 Reference: https://sriramajeyam.com/grafana-infinity-datasource/ <br>
 Sample Dashboard: https://safehouseinn.grafana.net/goto/tOHeCcHVz?orgId=1
+<br>
+
+The idea is to have a dashboard for viewing test results of regression run
