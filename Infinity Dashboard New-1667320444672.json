@@ -1,0 +1,1061 @@
+{
+  "__inputs": [
+    {
+      "name": "DS_INFINITY",
+      "label": "Infinity",
+      "description": "",
+      "type": "datasource",
+      "pluginId": "yesoreyeram-infinity-datasource",
+      "pluginName": "Infinity"
+    }
+  ],
+  "__elements": {},
+  "__requires": [
+    {
+      "type": "panel",
+      "id": "barchart",
+      "name": "Bar chart",
+      "version": ""
+    },
+    {
+      "type": "panel",
+      "id": "bargauge",
+      "name": "Bar gauge",
+      "version": ""
+    },
+    {
+      "type": "grafana",
+      "id": "grafana",
+      "name": "Grafana",
+      "version": "9.2.2-eb6f0ffe76"
+    },
+    {
+      "type": "panel",
+      "id": "stat",
+      "name": "Stat",
+      "version": ""
+    },
+    {
+      "type": "panel",
+      "id": "table",
+      "name": "Table",
+      "version": ""
+    },
+    {
+      "type": "datasource",
+      "id": "yesoreyeram-infinity-datasource",
+      "name": "Infinity",
+      "version": "1.0.0"
+    }
+  ],
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "grafana",
+          "uid": "-- Grafana --"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "target": {
+          "limit": 100,
+          "matchAny": false,
+          "tags": [],
+          "type": "dashboard"
+        },
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": null,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "${DS_INFINITY}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "align": "auto",
+            "displayMode": "auto",
+            "inspect": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "iteration"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 105
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 16,
+        "w": 12,
+        "x": 0,
+        "y": 0
+      },
+      "id": 11,
+      "options": {
+        "footer": {
+          "fields": "",
+          "reducer": [
+            "sum"
+          ],
+          "show": false
+        },
+        "showHeader": true,
+        "sortBy": []
+      },
+      "pluginVersion": "9.2.2-eb6f0ffe76",
+      "targets": [
+        {
+          "columns": [],
+          "data": "name,mediaType,size\nbrowser_marketshare.csv,application/octet-stream,355 B\nflight_info_by_state.csv,application/octet-stream,681 B\ngdp_per_capita.csv,application/octet-stream,4.02 KiB\njs_libraries.csv,application/octet-stream,179 B\nohlc_dogecoin.csv,application/octet-stream,187 KiB\npopulation_by_state.csv,application/octet-stream,138 B\nweight_height.csv,application/octet-stream,408 KiB",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "${DS_INFINITY}"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "refId": "A",
+          "root_selector": "",
+          "source": "url",
+          "type": "csv",
+          "url": "https://github.com/AjithGeorge/Grafana-InfinityDashboard/blob/main/sample.csv",
+          "url_options": {
+            "data": "",
+            "headers": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.github+json"
+              }
+            ],
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "CSV from GIT",
+      "type": "table"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "${DS_INFINITY}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "continuous-RdYlGr"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 0
+      },
+      "id": 7,
+      "options": {
+        "displayMode": "basic",
+        "minVizHeight": 5,
+        "minVizWidth": 0,
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [],
+          "fields": "/^%$/",
+          "limit": 10000,
+          "values": true
+        },
+        "showUnfilled": true
+      },
+      "pluginVersion": "9.2.2-eb6f0ffe76",
+      "targets": [
+        {
+          "columns": [
+            {
+              "selector": "TestName",
+              "text": "TestName",
+              "type": "string"
+            },
+            {
+              "selector": "PASS",
+              "text": "Pass",
+              "type": "number"
+            },
+            {
+              "selector": "FAIL",
+              "text": "Fail",
+              "type": "number"
+            },
+            {
+              "selector": "TimeStamp",
+              "text": "Time",
+              "type": "timestamp"
+            }
+          ],
+          "data": "TimeStamp,TestName,PASS,FAIL\n2022-08-14 12:35:31.142,Test1,1,0\n2022-08-12 12:35:32.222,Test1,1,0\n2022-08-11 10:35:32.712,Test2,1,0\n2022-08-11 10:35:32.712,Test2,1,0\n2022-08-11 01:35:32.333,Test2,0,1\n2022-08-11 01:35:32.333,Test3,0,1\n2022-08-11 01:35:32.333,Test3,0,1\n2022-08-11 01:35:32.333,Test3,0,1",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "${DS_INFINITY}"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "hide": false,
+          "refId": "A",
+          "root_selector": "",
+          "source": "inline",
+          "type": "csv",
+          "uql": "parse-csv summarize \"Cnt\" =count(\"TestName\"), \"TestName\" by \"Status\"",
+          "url": "",
+          "url_options": {
+            "data": "",
+            "headers": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.github+json"
+              },
+              {
+                "key": "Authorization",
+                "value": "token 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"
+              }
+            ],
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Test Pass Percentage",
+      "transformations": [
+        {
+          "id": "groupBy",
+          "options": {
+            "fields": {
+              "Fail": {
+                "aggregations": []
+              },
+              "Pass": {
+                "aggregations": [
+                  "mean"
+                ],
+                "operation": "aggregate"
+              },
+              "Status": {
+                "aggregations": [
+                  "allValues"
+                ],
+                "operation": "aggregate"
+              },
+              "TestName": {
+                "aggregations": [],
+                "operation": "groupby"
+              },
+              "Time": {
+                "aggregations": [
+                  "count"
+                ],
+                "operation": "aggregate"
+              },
+              "TimeStamp": {
+                "aggregations": []
+              }
+            }
+          }
+        },
+        {
+          "id": "calculateField",
+          "options": {
+            "alias": "%",
+            "binary": {
+              "left": "Pass (mean)",
+              "operator": "*",
+              "reducer": "sum",
+              "right": "100"
+            },
+            "mode": "binary",
+            "reduce": {
+              "reducer": "sum"
+            },
+            "replaceFields": false
+          }
+        }
+      ],
+      "transparent": true,
+      "type": "bargauge"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "${DS_INFINITY}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "axisSoftMin": 0,
+            "fillOpacity": 80,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineWidth": 1,
+            "scaleDistribution": {
+              "type": "linear"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 8
+      },
+      "id": 8,
+      "options": {
+        "barRadius": 0,
+        "barWidth": 0.97,
+        "groupWidth": 0.7,
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "right",
+          "showLegend": false
+        },
+        "orientation": "horizontal",
+        "showValue": "never",
+        "stacking": "none",
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        },
+        "xTickLabelRotation": 0,
+        "xTickLabelSpacing": 0
+      },
+      "pluginVersion": "9.0.1",
+      "targets": [
+        {
+          "columns": [
+            {
+              "selector": "TestName",
+              "text": "TestName",
+              "type": "string"
+            },
+            {
+              "selector": "PASS",
+              "text": "Pass",
+              "type": "number"
+            },
+            {
+              "selector": "FAIL",
+              "text": "Fail",
+              "type": "number"
+            },
+            {
+              "selector": "TimeStamp",
+              "text": "Time",
+              "type": "timestamp"
+            }
+          ],
+          "data": "TimeStamp,TestName,PASS,FAIL\n2022-08-14 12:35:31.142,Test1,1,0\n2022-08-12 12:35:32.222,Test1,1,0\n2022-08-11 10:35:32.712,Test2,1,0\n2022-08-11 10:35:32.712,Test2,1,0\n2022-08-11 01:35:32.333,Test2,0,1\n2022-08-11 01:35:32.333,Test3,0,1\n2022-08-11 01:35:32.333,Test3,0,1\n2022-08-11 01:35:32.333,Test3,0,1",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "${DS_INFINITY}"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "hide": false,
+          "refId": "A",
+          "root_selector": "",
+          "source": "inline",
+          "type": "csv",
+          "uql": "parse-csv summarize \"Cnt\" =count(\"TestName\"), \"TestName\" by \"Status\"",
+          "url": "",
+          "url_options": {
+            "data": "",
+            "headers": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.github+json"
+              },
+              {
+                "key": "Authorization",
+                "value": "token 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"
+              }
+            ],
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Test Pass Percentage With Count",
+      "transformations": [
+        {
+          "id": "groupBy",
+          "options": {
+            "fields": {
+              "Fail": {
+                "aggregations": []
+              },
+              "Pass": {
+                "aggregations": [
+                  "mean"
+                ],
+                "operation": "aggregate"
+              },
+              "Status": {
+                "aggregations": [
+                  "allValues"
+                ],
+                "operation": "aggregate"
+              },
+              "TestName": {
+                "aggregations": [],
+                "operation": "groupby"
+              },
+              "Time": {
+                "aggregations": [
+                  "count"
+                ],
+                "operation": "aggregate"
+              },
+              "TimeStamp": {
+                "aggregations": []
+              }
+            }
+          }
+        },
+        {
+          "id": "calculateField",
+          "options": {
+            "alias": "%",
+            "binary": {
+              "left": "Pass (mean)",
+              "operator": "*",
+              "reducer": "sum",
+              "right": "100"
+            },
+            "mode": "binary",
+            "reduce": {
+              "reducer": "sum"
+            },
+            "replaceFields": false
+          }
+        },
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {
+              "Pass (mean)": true,
+              "TestName": false
+            },
+            "indexByName": {},
+            "renameByName": {
+              "%": "Pass Percentage",
+              "Time (count)": "NumberOfTimesTestExecuted"
+            }
+          }
+        }
+      ],
+      "transparent": true,
+      "type": "barchart"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "${DS_INFINITY}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "continuous-GrYlRd"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "axisSoftMin": 0,
+            "fillOpacity": 59,
+            "gradientMode": "hue",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineWidth": 1,
+            "scaleDistribution": {
+              "type": "linear"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "ms"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 16,
+        "w": 12,
+        "x": 0,
+        "y": 16
+      },
+      "id": 13,
+      "options": {
+        "barRadius": 0,
+        "barWidth": 0.36,
+        "colorByField": "responseTime",
+        "groupWidth": 0.7,
+        "legend": {
+          "calcs": [
+            "count"
+          ],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "orientation": "horizontal",
+        "showValue": "auto",
+        "stacking": "none",
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        },
+        "xField": "requestName",
+        "xTickLabelRotation": -45,
+        "xTickLabelSpacing": 0
+      },
+      "pluginVersion": "9.0.1",
+      "targets": [
+        {
+          "columns": [
+            {
+              "selector": "responseTime",
+              "text": "",
+              "type": "number"
+            },
+            {
+              "selector": "requestName",
+              "text": "",
+              "type": "string"
+            }
+          ],
+          "data": "time,iteration,collectionName,requestName,method,url,status,code,responseTime,responseSize,executed\n35:35.1,1,DM,Generate_SessionId,POST,https://domain/auth/api/v1/sessions,Created,201,1142,69,\"Test: Generate_SessionId-Check 201 Created, Test: Generate_SessionId-Update Session\"\n96.2,1,DM,Generate_Token,POST,https://domain/auth/api/v1/tokens,OK,200,526,715,\"Test: Generate_Token-Check 200 OK, Test: Generate_Token-Update Token\"\n71.6,1,DM,Get_AuthVersion,GET,https://domain/auth/api/v1/documentation/api,OK,200,1107,141085,\"Test: Get_AuthVersion-Check 200 OK, Test: Get_AuthVersion-Update Version\"\n115,1,DM,Get_RestVersion,GET,https://domain/rest/api/documentation/api,OK,200,347,369688,\"Test: Get_RestVersion-Check 200 OK, Test: Get_RestVersion-Update Version\"\n35:37.1,1,DM,Fds_GetlfHoldings,GET,\"https://domain/rest/api/Fds/lf/holdings?fids=lf.DIVIDEND_PER_SHARE_3Y,lf.BANK_HOLDING_COMPANY,lfhld.HOLDINGDATE,lfhld.MARKETVALUECURR,lfhld.HOLDINGNAME,lfhld.SHARESHELD,lfhld.MARKETVALUE,lfhld.HOLDINGID,lfhld.PORTFOLIOID&lipperid=68410644\",OK,200,273,3902,\"Test: Fds_GetlfHoldings: -200-OK, Test: Fds_GetlfHoldings: Request parameters check, Test: Fds_GetlfHoldings: Check successful data retrieval\"\n96.4,1,DM,Fds_lfHoldingsRequiredParamsCheck,GET,https://domain/rest/api/Fds/lf/holdings?,Bad Request,400,272,36,Test: Fds_lfHoldingsRequiredParamsCheck -400-Bad Request\n60.8,1,DM,Fds_GetlfHoldingsInvalidLipperIdCheck,GET,\"https://domain/rest/api/Fds/lf/holdings?fids=lf.ISIN,lf.LATESTPRICE,lf.SHORTNAME,lf.TICKER,lf.VALOR,lf.REINVESTMENTTYPE,lfhld.HOLDINGNAME,lfhld.HOLDINGDATE,lfhld.MARKETVALUE,lfhld.HOLDINGID,lfhld.PORTFOLIOID,lfhld.MARKETVALUECURR&lipperid=123321\",OK,200,718,313,\"Test: Fds_GetlfHoldingsInvalidLipperIdCheck -200-OK, Test: Fds_GetlfHoldingsInvalidLipperIdCheck -Response to NOT have any data\"\n139,1,DM,Fds_GetlfData,POST,https://domain/rest/api/Fds/lf_v2,OK,200,4393,9689,\"Test: Fds_GetlfData: -200-OK, Test: Fds_GetlfData: Request parameters and default values check, Test: Fds_GetlfData: Check successful data retrieval\"\n35:39.1,1,DM,Fds_lfDataSortingCheck,POST,https://domain/rest/api/Fds/lf_v2,OK,200,2981,8118,\"Test: Fds_lfDataSortingCheck: -200-OK, Test: Fds_lfDataSortingCheck: Request parameters check, Test: Fds_lfDataSortingCheck: Check sort functionality, Test: Fds_lfDataSortingCheck: Check successful data retrieval\"\n96.3,1,DM,Fds_lfDataPaginationCheck,POST,https://domain/rest/api/Fds/lf_v2,OK,200,3612,13566,\"Test: Fds_lfDataPaginationCheck: -200-OK, Test: Fds_lfDataPaginationCheck: Request parameters check, Test: Fds_lfDataPaginationCheck: Check successful data retrieval\"\n83.9,1,DM,Fds_lfData_WithLipperIdFilter,POST,https://domain/rest/api/Fds/lf_v2,OK,200,329,4425,\"Test: Fds_lfData_WithLipperIdFilter: -200-OK, Test: Fds_lfData_WithLipperIdFilter: Request parameter check, Test: Fds_lfData_WithLipperIdFilter: Check response filtered based on lipperId, Test: Fds_lfData_WithLipperIdFilter: Check successful data retrieval\"\n112,1,DM,Fds_lfData_WithCurrencyFilter,POST,https://domain/rest/api/Fds/lf_v2,OK,200,3339,9278,\"Test: Fds_lfData_WithCurrencyFilter: -200-OK, Test: Fds_lfData_WithCurrencyFilter: Request parameter check, Test: Fds_lfData_WithCurrencyFilter: Check response filtered based on currency, Test: Fds_lfData_WithCurrencyFilter: Check successful data retrieval\"\n35:41.1,1,DM,Fds_lfData_WithCountryFilter,POST,https://domain/rest/api/Fds/lf_v2,OK,200,2771,9765,\"Test: Fds_lfData_WithCountryFilter: -200-OK, Test: Fds_lfData_WithCountryFilter: Request parameter check, Test: Fds_lfData_WithCountryFilter: Check response filtered based on currency, Test: Fds_lfData_WithCountryFilter: Check successful data retrieval\"\n96.2,1,DM,Fds_lfData_WithlfFilter,POST,https://domain/rest/api/Fds/lf_v2,OK,200,451,10732,\"Test: Fds_lfData_WithlfFilter: -200-OK, Test: Fds_lfData_WithlfFilter: Check lf filter action, Test: Fds_lfData_WithlfFilter: Check successful data retrieval\"\n49.9,1,DM,Fds_lfData_WithClassSchemeIdFilter,POST,https://domain/rest/api/Fds/lf_v2,OK,200,3272,7690,\"Test: Fds_lfData_WithClassSchemeIdFilter: -200-OK, Test: Fds_lfData_WithClassSchemeIdFilter: Request parameter check, Test: Fds_lfData_WithClassSchemeIdFilter: Check response filtered based on currency, Test: Fds_lfData_WithClassSchemeIdFilter: Check successful data retrieval\"\n108,1,DM,Fds_lfData_ChecklfNamespaceComponents,POST,https://domain/rest/api/Fds/lf_v2,OK,200,2981,7474,\"Test: Fds_lfData_ChecklfNamespaceComponents: -200-OK, Test: Fds_lfData_ChecklfNamespaceComponents: Check lf namespace components, Test: Fds_lfData_ChecklfNamespaceComponents: Check successful data retrieval\"\n35:41.1,1,DM,Fds_lfDataOptionalParamsCheck,POST,https://domain/rest/api/Fds/lf_v2,OK,200,524,696,Test: Fds_lfDataOptionalParamsCheck -200-OK for missing optional params\n96.2,1,DM,Fds_lfDataRequiredParamsCheck,POST,https://domain/rest/api/Fds/lf_v2,Bad Request,400,546,36,Test: Fds_lfDataRequiredParamsCheck -400-Bad Request for missing required params\n",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "${DS_INFINITY}"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "refId": "A",
+          "root_selector": "",
+          "source": "url",
+          "type": "csv",
+          "url": "https://github.com/AjithGeorge/Grafana-InfinityDashboard/blob/main/sample.csv",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "ResponseTime",
+      "type": "barchart"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "${DS_INFINITY}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "continuous-greens"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 16
+      },
+      "id": 9,
+      "options": {
+        "colorMode": "none",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [],
+          "fields": "/.*/",
+          "values": true
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.2.2-eb6f0ffe76",
+      "targets": [
+        {
+          "columns": [
+            {
+              "selector": "TestName",
+              "text": "TestName",
+              "type": "string"
+            },
+            {
+              "selector": "Pass",
+              "text": "Pass",
+              "type": "number"
+            },
+            {
+              "selector": "Fail",
+              "text": "Fail",
+              "type": "number"
+            },
+            {
+              "selector": "TimeStamp",
+              "text": "Time",
+              "type": "timestamp"
+            }
+          ],
+          "data": "\"Tag\",\"TimeStamp\",\"TestName\",\"Pass\",\"Fail\",\"Skip\"\n\"streams-regression\",\"2022-09-13 10:16:17 CEST\",\"NewsServerStatus_AsAvailableInWSMessage-\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:16:18 CEST\",\"SubscriptionMsg_ServiceToBeQuotes- realtime BMWG.DE\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:16:17 CEST\",\"Subscribe_AndRetrieveMessages- delayed ADBE.OQ\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:16:18 CEST\",\"SubscriptionMsg_PermissionToMatchQuality- realtime EUR=\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:16:18 CEST\",\"SubscriptionMsg_ServiceToBeQuotes- realtime EUR=\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:16:17 CEST\",\"QuoteServerStatus_AsAvailableInWSMessage-\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:16:17 CEST\",\"AlertsServerStatus_AsAvailableInWSMessage-\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:16:18 CEST\",\"SubscriptionMsg_ServiceToBeQuotes- delayed ADBE.OQ\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:16:18 CEST\",\"SnapshotMsg_MessageTypeAsSnapshot- realtime EUR=\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:16:17 CEST\",\"Subscribe_AndRetrieveMessages- realtime EUR=\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:16:17 CEST\",\"Subscribe_AndRetrieveMessages- realtime BMWG.DE\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:16:18 CEST\",\"SnapshotMsg_ServiceToBeQuotes- delayed ADBE.OQ\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:16:18 CEST\",\"SubscriptionMsg_ServiceToBeQuotes- delayed RUB=\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:16:18 CEST\",\"SubscriptionMsg_MessageIdToMatchRequestMessageId- delayed ADBE.OQ\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:16:18 CEST\",\"SubscriptionMsg_MessageTypeAsSubscribe- delayed ADBE.OQ\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:16:18 CEST\",\"SnapshotMsg_ServiceToBeQuotes- realtime BMWG.DE\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:16:18 CEST\",\"SnapshotMsg_ServiceToBeQuotes- delayed RUB=\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:16:18 CEST\",\"SubscriptionMsg_MessageTypeAsSubscribe- realtime EUR=\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:16:18 CEST\",\"SubscriptionMsg_PermissionToMatchQuality- realtime BMWG.DE\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:16:18 CEST\",\"SubscriptionMsg_MessageIdToMatchRequestMessageId- realtime EUR=\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:16:18 CEST\",\"SubscriptionMsg_MessageTypeAsSubscribe- realtime BMWG.DE\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:16:18 CEST\",\"Subscribe_AndRetrieveMessages- delayed RUB=\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:16:16 CEST\",\"EstablishWebSocketConnection_AndRetrieveStatsMessage-\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:16:18 CEST\",\"SnapshotMsg_MessageTypeAsSnapshot- realtime BMWG.DE\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:16:18 CEST\",\"SubscriptionMsg_MessageIdToMatchRequestMessageId- realtime BMWG.DE\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:16:18 CEST\",\"SnapshotMsg_MessageIdToMatchRequestMessageId- realtime BMWG.DE\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:16:18 CEST\",\"SubscriptionMsg_StatusToBeSuccessful- delayed RUB=\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:16:18 CEST\",\"SnapshotMsg_MessageIdToMatchRequestMessageId- delayed RUB=\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:16:18 CEST\",\"SubscriptionMsg_PermissionToMatchQuality- delayed RUB=\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:16:13 CEST\",\"GenerateSessionId-\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:16:18 CEST\",\"SnapshotMsg_MessageIdToMatchRequestMessageId- delayed ADBE.OQ\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:16:18 CEST\",\"SnapshotMsg_MessageTypeAsSnapshot- delayed RUB=\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:16:18 CEST\",\"SubscriptionMsg_PermissionToMatchQuality- delayed ADBE.OQ\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:16:18 CEST\",\"SubscriptionMsg_StatusToBeSuccessful- realtime EUR=\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:16:18 CEST\",\"SubscriptionMsg_StatusToBeSuccessful- realtime BMWG.DE\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:16:18 CEST\",\"SubscriptionMsg_MessageIdToMatchRequestMessageId- delayed RUB=\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:16:18 CEST\",\"SubscriptionMsg_MessageTypeAsSubscribe- delayed RUB=\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:16:18 CEST\",\"SnapshotMsg_MessageIdToMatchRequestMessageId- realtime EUR=\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:16:18 CEST\",\"SnapshotMsg_MessageTypeAsSnapshot- delayed ADBE.OQ\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:16:15 CEST\",\"GenerateToken-\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:16:18 CEST\",\"SubscriptionMsg_StatusToBeSuccessful- delayed ADBE.OQ\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:16:18 CEST\",\"SnapshotMsg_ServiceToBeQuotes- realtime EUR=\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:16:18 CEST\",\"SnapshotMsg_MessageRICsToMatchRequestRICs- delayed ADBE.OQ\",\"0\",\"1\",\"0\"\n\"streams-regression\",\"2022-09-13 10:16:18 CEST\",\"SnapshotMsg_MessageRICsToMatchRequestRICs- realtime EUR=\",\"0\",\"1\",\"0\"\n\"streams-regression\",\"2022-09-13 10:16:18 CEST\",\"SnapshotMsg_MessageRICsToMatchRequestRICs- realtime BMWG.DE\",\"0\",\"1\",\"0\"\n\"streams-regression\",\"2022-09-13 10:16:18 CEST\",\"SnapshotMsg_MessageRICsToMatchRequestRICs- delayed RUB=\",\"0\",\"1\",\"0\"\n\"streams-regression\",\"2022-09-13 10:32:13 CEST\",\"NewsServerStatus_AsAvailableInWSMessage-\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:32:13 CEST\",\"Subscribe_AndRetrieveMessages- realtime EUR=\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:32:14 CEST\",\"SnapshotMsg_MessageIdToMatchRequestMessageId- delayed RUB=\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:32:14 CEST\",\"SubscriptionMsg_MessageIdToMatchRequestMessageId- realtime BMWG.DE\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:32:14 CEST\",\"SubscriptionMsg_StatusToBeSuccessful- realtime EUR=\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:32:11 CEST\",\"GenerateToken-\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:32:14 CEST\",\"SnapshotMsg_ServiceToBeQuotes- realtime EUR=\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:32:14 CEST\",\"SubscriptionMsg_MessageIdToMatchRequestMessageId- realtime EUR=\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:32:13 CEST\",\"Subscribe_AndRetrieveMessages- delayed ADBE.OQ\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:32:14 CEST\",\"SubscriptionMsg_PermissionToMatchQuality- realtime BMWG.DE\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:32:14 CEST\",\"SubscriptionMsg_MessageIdToMatchRequestMessageId- delayed ADBE.OQ\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:32:14 CEST\",\"SubscriptionMsg_ServiceToBeQuotes- realtime BMWG.DE\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:32:09 CEST\",\"GenerateSessionId-\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:32:14 CEST\",\"SubscriptionMsg_MessageIdToMatchRequestMessageId- delayed RUB=\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:32:14 CEST\",\"SubscriptionMsg_PermissionToMatchQuality- realtime EUR=\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:32:14 CEST\",\"SnapshotMsg_MessageTypeAsSnapshot- realtime BMWG.DE\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:32:14 CEST\",\"SnapshotMsg_MessageTypeAsSnapshot- delayed ADBE.OQ\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:32:13 CEST\",\"Subscribe_AndRetrieveMessages- realtime BMWG.DE\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:32:14 CEST\",\"SubscriptionMsg_StatusToBeSuccessful- delayed RUB=\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:32:14 CEST\",\"SnapshotMsg_MessageTypeAsSnapshot- delayed RUB=\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:32:14 CEST\",\"Subscribe_AndRetrieveMessages- delayed RUB=\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:32:14 CEST\",\"SubscriptionMsg_StatusToBeSuccessful- delayed ADBE.OQ\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:32:14 CEST\",\"SubscriptionMsg_ServiceToBeQuotes- delayed ADBE.OQ\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:32:13 CEST\",\"QuoteServerStatus_AsAvailableInWSMessage-\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:32:14 CEST\",\"SubscriptionMsg_MessageTypeAsSubscribe- delayed RUB=\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:32:14 CEST\",\"SubscriptionMsg_ServiceToBeQuotes- realtime EUR=\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:32:14 CEST\",\"SnapshotMsg_MessageIdToMatchRequestMessageId- delayed ADBE.OQ\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:32:14 CEST\",\"SubscriptionMsg_StatusToBeSuccessful- realtime BMWG.DE\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:32:14 CEST\",\"SnapshotMsg_ServiceToBeQuotes- delayed RUB=\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:32:12 CEST\",\"EstablishWebSocketConnection_AndRetrieveStatsMessage-\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:32:14 CEST\",\"SnapshotMsg_MessageIdToMatchRequestMessageId- realtime BMWG.DE\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:32:14 CEST\",\"SubscriptionMsg_ServiceToBeQuotes- delayed RUB=\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:32:14 CEST\",\"SnapshotMsg_ServiceToBeQuotes- delayed ADBE.OQ\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:32:14 CEST\",\"SubscriptionMsg_MessageTypeAsSubscribe- realtime EUR=\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:32:14 CEST\",\"SubscriptionMsg_MessageTypeAsSubscribe- realtime BMWG.DE\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:32:14 CEST\",\"SubscriptionMsg_PermissionToMatchQuality- delayed RUB=\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:32:13 CEST\",\"AlertsServerStatus_AsAvailableInWSMessage-\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:32:14 CEST\",\"SubscriptionMsg_PermissionToMatchQuality- delayed ADBE.OQ\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:32:14 CEST\",\"SnapshotMsg_MessageIdToMatchRequestMessageId- realtime EUR=\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:32:14 CEST\",\"SnapshotMsg_MessageTypeAsSnapshot- realtime EUR=\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:32:14 CEST\",\"SnapshotMsg_ServiceToBeQuotes- realtime BMWG.DE\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:32:14 CEST\",\"SubscriptionMsg_MessageTypeAsSubscribe- delayed ADBE.OQ\",\"1\",\"0\",\"0\"\n\"streams-regression\",\"2022-09-13 10:32:14 CEST\",\"SnapshotMsg_MessageRICsToMatchRequestRICs- delayed ADBE.OQ\",\"0\",\"1\",\"0\"\n\"streams-regression\",\"2022-09-13 10:32:14 CEST\",\"SnapshotMsg_MessageRICsToMatchRequestRICs- realtime EUR=\",\"0\",\"1\",\"0\"\n\"streams-regression\",\"2022-09-13 10:32:14 CEST\",\"SnapshotMsg_MessageRICsToMatchRequestRICs- delayed RUB=\",\"0\",\"1\",\"0\"\n\"streams-regression\",\"2022-09-13 10:32:14 CEST\",\"SnapshotMsg_MessageRICsToMatchRequestRICs- realtime BMWG.DE\",\"0\",\"1\",\"0\"\n",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "${DS_INFINITY}"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "hide": false,
+          "refId": "A",
+          "root_selector": "",
+          "source": "inline",
+          "type": "csv",
+          "uql": "parse-csv summarize \"Cnt\" =count(\"TestName\"), \"TestName\" by \"Status\"",
+          "url": "",
+          "url_options": {
+            "data": "",
+            "headers": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.github+json"
+              },
+              {
+                "key": "Authorization",
+                "value": "token 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"
+              }
+            ],
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Total Unique Tests",
+      "transformations": [
+        {
+          "id": "groupBy",
+          "options": {
+            "fields": {
+              "TestName": {
+                "aggregations": [],
+                "operation": "groupby"
+              }
+            }
+          }
+        },
+        {
+          "id": "reduce",
+          "options": {
+            "includeTimeField": false,
+            "mode": "reduceFields",
+            "reducers": [
+              "count"
+            ]
+          }
+        },
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {},
+            "indexByName": {},
+            "renameByName": {
+              "TestName": "Tests"
+            }
+          }
+        }
+      ],
+      "transparent": true,
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "${DS_INFINITY}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "axisSoftMin": 0,
+            "fillOpacity": 63,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineWidth": 1,
+            "scaleDistribution": {
+              "type": "linear"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 0
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Fail Percentage"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "thresholds"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Pass Percentage"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "continuous-greens"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 12,
+        "y": 24
+      },
+      "id": 12,
+      "options": {
+        "barRadius": 0,
+        "barWidth": 0.95,
+        "groupWidth": 0.51,
+        "legend": {
+          "calcs": [],
+          "displayMode": "table",
+          "placement": "right",
+          "showLegend": true
+        },
+        "orientation": "auto",
+        "showValue": "never",
+        "stacking": "none",
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        },
+        "xTickLabelRotation": 0,
+        "xTickLabelSpacing": 0
+      },
+      "pluginVersion": "9.0.1",
+      "targets": [
+        {
+          "columns": [
+            {
+              "selector": "TestName",
+              "text": "TestName",
+              "type": "string"
+            },
+            {
+              "selector": "PASS",
+              "text": "Pass",
+              "type": "number"
+            },
+            {
+              "selector": "FAIL",
+              "text": "Fail",
+              "type": "number"
+            },
+            {
+              "selector": "TimeStamp",
+              "text": "Time",
+              "type": "timestamp"
+            },
+            {
+              "selector": "RunName",
+              "text": "RunName",
+              "type": "string"
+            }
+          ],
+          "data": "RunName,TimeStamp,TestName,PASS,FAIL\nDay1,2022-08-14 12:35:31.142,Test1,1,0\nDay2,2022-08-12 12:35:32.222,Test1,1,0\nDay2,2022-08-11 10:35:32.712,Test2,1,0\nDay2,2022-08-11 10:35:32.712,Test2,1,0\nDay2,2022-08-11 01:35:32.333,Test2,0,1\nDay3,2022-08-11 01:35:32.333,Test3,0,1\nDay3,2022-08-11 01:35:32.333,Test3,0,1\nDay3,2022-08-11 01:35:32.333,Test3,0,1\nDay4,2022-08-11 01:35:32.333,Test1,0,1\nDay4,2022-08-11 01:35:32.333,Test1,1,0\nDay4,2022-08-11 01:35:32.333,Test2,0,1\nDay5,2022-08-11 01:35:32.333,Test3,0,1\nDay5,2022-08-11 01:35:32.333,Test1,1,0\nDay5,2022-08-11 01:35:32.333,Test1,1,0\nDay5,2022-08-11 01:35:32.333,Test2,1,0\nDay5,2022-08-11 01:35:32.333,Test2,1,0\n",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "${DS_INFINITY}"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "hide": false,
+          "refId": "A",
+          "root_selector": "",
+          "source": "inline",
+          "type": "csv",
+          "uql": "parse-csv summarize \"Cnt\" =count(\"TestName\"), \"TestName\" by \"Status\"",
+          "url": "",
+          "url_options": {
+            "data": "",
+            "headers": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.github+json"
+              },
+              {
+                "key": "Authorization",
+                "value": "token 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"
+              }
+            ],
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Pass/Fail Per Run",
+      "transformations": [
+        {
+          "id": "groupBy",
+          "options": {
+            "fields": {
+              "Fail": {
+                "aggregations": [
+                  "mean"
+                ],
+                "operation": "aggregate"
+              },
+              "Pass": {
+                "aggregations": [
+                  "mean"
+                ],
+                "operation": "aggregate"
+              },
+              "RunName": {
+                "aggregations": [],
+                "operation": "groupby"
+              },
+              "Status": {
+                "aggregations": [
+                  "allValues"
+                ],
+                "operation": "aggregate"
+              },
+              "TestName": {
+                "aggregations": []
+              },
+              "Time": {
+                "aggregations": [
+                  "count"
+                ]
+              },
+              "TimeStamp": {
+                "aggregations": []
+              }
+            }
+          }
+        },
+        {
+          "id": "calculateField",
+          "options": {
+            "alias": "%",
+            "binary": {
+              "left": "Pass (mean)",
+              "operator": "*",
+              "reducer": "sum",
+              "right": "100"
+            },
+            "mode": "binary",
+            "reduce": {
+              "reducer": "sum"
+            },
+            "replaceFields": false
+          }
+        },
+        {
+          "id": "calculateField",
+          "options": {
+            "alias": "Fail Percentage",
+            "binary": {
+              "left": "Fail (mean)",
+              "operator": "*",
+              "reducer": "sum",
+              "right": "100"
+            },
+            "mode": "binary",
+            "reduce": {
+              "reducer": "sum"
+            }
+          }
+        },
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {
+              "%": false,
+              "Fail (mean)": true,
+              "Pass (mean)": true,
+              "TestName": false
+            },
+            "indexByName": {},
+            "renameByName": {
+              "%": "Pass Percentage",
+              "RunName": "Run",
+              "Time (count)": "NumberOfTimesTestExecuted"
+            }
+          }
+        }
+      ],
+      "transparent": true,
+      "type": "barchart"
+    }
+  ],
+  "refresh": false,
+  "schemaVersion": 37,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "2022-10-26T12:49:10.650Z",
+    "to": "2022-10-26T12:54:10.650Z"
+  },
+  "timepicker": {},
+  "timezone": "",
+  "title": "Infinity Dashboard New",
+  "uid": "xIWa1Vi4A",
+  "version": 11,
+  "weekStart": ""
+}
