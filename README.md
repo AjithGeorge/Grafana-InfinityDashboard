@@ -1,4 +1,6 @@
 # Grafana-InfinityDashboard
+#### Simple dashboard for QA/Regression result represnetation and trend analysis
+
 Grafana dashboard with infinity plugin
 
 Visualize data from JSON, CSV, XML, GraphQL, HTML & REST APIs. Also turns any website into grafana dashboard.
